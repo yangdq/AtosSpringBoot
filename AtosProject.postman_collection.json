@@ -1,0 +1,424 @@
+{
+	"info": {
+		"_postman_id": "57fac728-cd7e-4f9d-8ef9-c80f3162fa79",
+		"name": "GWTSecurity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create user",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userName\" : \"dummyuser2\",\r\n\"password\" : \"pass\",\r\n\"firstName\" : \"dummy2\",\r\n\"lastName\" : \"user\",\r\n \"roles\" : \"ROLE_USER\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/createuser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"createuser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "authenticate to receive JWT Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\" : \"dummyuser2\",\r\n\"password\": \"pass\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET find user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkdW1teXVzZXIyIiwiZXhwIjoxNjI4MjM4NDkzLCJpYXQiOjE2MjgyMDI0OTN9.ScZ7fGnE7HVBCxLTJjSCqgiKsFiFiIf0dmothd8IYA4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/finduser/dummyuser2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"finduser",
+						"dummyuser2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkdW1teXVzZXIyIiwiZXhwIjoxNjI4MjM4NDkzLCJpYXQiOjE2MjgyMDI0OTN9.ScZ7fGnE7HVBCxLTJjSCqgiKsFiFiIf0dmothd8IYA4",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"dummyuser2\",\r\n    \"firstName\": \"Dummy3\",\r\n    \"lastName\": \"Dole3\",\r\n    \"roles\": \"ROLE_USER\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/updateuser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"updateuser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create account",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkdW1teXVzZXIyIiwiZXhwIjoxNjI4MjM1MzQ2LCJpYXQiOjE2MjgxOTkzNDZ9.6bjB5iCaUJQER0Dg47jM1-kjl9XQvaGgKFMNlkyj32g",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerNumber\": \"57aa44e8-2998-44ed-8ced-5f1a9218051c\",\r\n    \"balance\": \"7000.00\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/createaccount",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"createaccount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find account",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkdW1teXVzZXIyIiwiZXhwIjoxNjI4MjM4NDkzLCJpYXQiOjE2MjgyMDI0OTN9.ScZ7fGnE7HVBCxLTJjSCqgiKsFiFiIf0dmothd8IYA4",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/findaccount/5a654584-1263-4355-9d6f-9efc1f451c8e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"findaccount",
+						"5a654584-1263-4355-9d6f-9efc1f451c8e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update account",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huZG9sZSIsImV4cCI6MTYyODIzMDIwNiwiaWF0IjoxNjI4MTk0MjA2fQ.9AHGB1Fk3lWfLWD8ZtGElDBxQXXRQ_xbWpvfMY3LqNE",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountNumber\": \"e6730c03-2c29-4280-8b5d-35ba259b4adb\",\r\n    \"balance\": 5000.00\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/updateaccount/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"updateaccount",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create transaction",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkdW1teXVzZXIyIiwiZXhwIjoxNjI4MjM4NDkzLCJpYXQiOjE2MjgyMDI0OTN9.ScZ7fGnE7HVBCxLTJjSCqgiKsFiFiIf0dmothd8IYA4",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"toAccountNumber\" : \"5a654584-1263-4355-9d6f-9efc1f451c8e\",\r\n    \"amount\" : \"1300.0\",\r\n    \"transactionType\" : \"credit\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/createtransaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"createtransaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findtransaction",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkdW1teXVzZXIyIiwiZXhwIjoxNjI4MjM4NDkzLCJpYXQiOjE2MjgyMDI0OTN9.ScZ7fGnE7HVBCxLTJjSCqgiKsFiFiIf0dmothd8IYA4",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/findtransaction/5c9c476a-c812-4d40-86d9-80f424282b96",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"findtransaction",
+						"5c9c476a-c812-4d40-86d9-80f424282b96"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete account",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huZG9sZSIsImV4cCI6MTYyODIzMDIwNiwiaWF0IjoxNjI4MTk0MjA2fQ.9AHGB1Fk3lWfLWD8ZtGElDBxQXXRQ_xbWpvfMY3LqNE",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/deleteaccount/e6730c03-2c29-4280-8b5d-35ba259b4adb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deleteaccount",
+						"e6730c03-2c29-4280-8b5d-35ba259b4adb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huZG9sZSIsImV4cCI6MTYyODIzMDIwNiwiaWF0IjoxNjI4MTk0MjA2fQ.9AHGB1Fk3lWfLWD8ZtGElDBxQXXRQ_xbWpvfMY3LqNE",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/deleteuser/johndole",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deleteuser",
+						"johndole"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
