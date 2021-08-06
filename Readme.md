@@ -24,3 +24,8 @@ Setting Name:  Generic H2 (Embedded)
 
 ## Swagger-UI
 The Swagger-UI URL is http://localhost:8080/swagger-ui.html
+
+## Command Line Usage
+If you want to run the applicaiton in commmand line, please have Java8+ and maven installed.  Then from the project directory, run:
+mvn package
+java -jar target/AtosSpringBoot-0.0.1-SNAPSHOT.jar

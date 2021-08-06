@@ -9,10 +9,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.inventsolv</groupId>
-	<artifactId>springsecurityjpajwt</artifactId>
+	<artifactId>AtosSpringBoot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringSecurityJPAJWT</name>
-	<description>SpringSecurityJPA project for Spring Boot</description>
+	<name>AtosSpringBoot</name>
+	<packaging>jar</packaging>
+	<description>AtosSpringBoot Demo</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
