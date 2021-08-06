@@ -44,16 +44,19 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter{
 		    .antMatchers("/authenticate").permitAll()
 		    .antMatchers("/main").permitAll()
 		    .antMatchers("/createuser").permitAll()
-		    .antMatchers("/h2-console").permitAll()
+		    .antMatchers("/h2-console/**").permitAll()
 		    .and()
 		    .authorizeRequests()
 		    .antMatchers("/admin").hasRole("ADMIN")
 		    .antMatchers("/user").hasAnyRole("ADMIN", "USER")
-		    .antMatchers("/finduser").hasAnyRole("USER")
-		    .antMatchers("/updateuser").hasAnyRole("USER")
-		    .antMatchers("/deleteuser").hasRole("ADMIN")		    
+		    .antMatchers("/finduser/**").hasAnyRole("ADMIN", "USER")
+		    .antMatchers("/updateuser/**").hasAnyRole("ADMIN", "USER")
+		    .antMatchers("/deleteuser/**").hasRole("ADMIN")		    
 			.anyRequest().authenticated()
 			.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+		
+	    // making H2 console working
+	    http.headers().frameOptions().disable();
 			
 		http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 	}
