@@ -21,6 +21,3 @@ username:      sa
 password:      password
 JDBC URL: 	   jdbc:h2:mem:testdb
 Setting Name:  Generic H2 (Embedded)
-
-## Swagger-UI
-The Swagger-UI URL is http://localhost:8080/swagger-ui.html
